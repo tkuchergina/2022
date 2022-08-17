@@ -3,14 +3,14 @@ package calculator;
 import java.util.Scanner;
 
 public class Calculator {
-    double firstValue;
-    double secondValue;
-    String operation;
-    Scanner scanner = new Scanner(System.in);
-    double result;
-    String answer;
+    private double firstValue;
+    private double secondValue;
+    private String operation;
+    private Scanner scanner = new Scanner(System.in);
+    private double result;
+    private String answer;
 
-    public double calc(){
+    private double calc(){
         System.out.println("Enter first Value");
         firstValue = scanner.nextDouble();
         System.out.println("Enter second Value");
