@@ -24,17 +24,24 @@ public class Calculator {
 
         }
 
-        switch (operation) {
-            case "+" -> result = firstValue + secondValue;
-            case "-" -> result = firstValue - secondValue;
-            case "*" -> result = firstValue * secondValue;
-            case "/" -> result = firstValue / secondValue;
-            case "^" -> result = Math.pow(firstValue, secondValue);
-            case "%" -> result = firstValue % secondValue;
-            default -> System.out.println("Некорректный оператор");
-        }
-        System.out.println("Result " + result);
-        return result;
+        try {
+            switch (operation) {
+                case "+" -> result = firstValue + secondValue;
+                case "-" -> result = firstValue - secondValue;
+                case "*" -> result = firstValue * secondValue;
+                case "/" -> result = firstValue / secondValue;
+                case "^" -> result = Math.pow(firstValue, secondValue);
+                case "%" -> result = firstValue % secondValue;
+                default -> System.out.println("Некорректный оператор");
+            }
+        } catch(NullPointerException ex){
+                System.out.println("Пустой оператор");
+            }
+
+
+            System.out.println("Result " + result);
+            return result;
+
     }
 
     public void useCalc() {
