@@ -1,6 +1,8 @@
 package calculator;
 
 import java.util.InputMismatchException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
@@ -10,6 +12,7 @@ public class Calculator {
     private Scanner scanner = new Scanner(System.in);
     private double result;
     private String answer;
+    private List<Double> calcList = new LinkedList<>();
 
     private double calc() {
         try {
@@ -49,7 +52,10 @@ public class Calculator {
         answer = "y";
         while ("y".equalsIgnoreCase(answer)) {
             res = calc();
-
+            calcList.add(firstValue);
+            calcList.add(secondValue);
+            calcList.add(result);
+            System.out.println(calcList);
             System.out.println("Продолжить? (y/n)");
             try {
                 answer = new Scanner(System.in).next();
